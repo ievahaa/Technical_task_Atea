@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TechnicalTaskQaA.Data;
+using TechnicalTaskQaA.Services;
 
 namespace TechnicalTaskQaA
 {
@@ -34,6 +35,12 @@ namespace TechnicalTaskQaA
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddTransient<IAnswerRepository, AnswerRepository>();
+            services.AddTransient<IQuestionRepository, QuestionRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+
+            services.AddTransient<JWTService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

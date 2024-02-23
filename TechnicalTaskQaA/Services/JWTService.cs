@@ -10,7 +10,7 @@ namespace TechnicalTaskQaA.Services
         private string _securityKey = "This will be a very secure key for user";
         public string Generate(int id)
         {
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(id.ToString()));
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_securityKey));
             var credetials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
             var header = new JwtHeader(credetials);
 

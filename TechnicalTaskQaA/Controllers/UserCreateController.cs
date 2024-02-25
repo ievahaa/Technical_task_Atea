@@ -25,7 +25,7 @@ namespace TechnicalTaskQaA.Controllers
                 {
                     Name = model.Name,
                     Nickname = model.Nickname,
-                    PasswordeHash = BCrypt.Net.BCrypt.HashPassword(model.PasswordeHash),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.PasswordHash),
                 };
                 _userRepository.Create(user);
                 return Ok(user);

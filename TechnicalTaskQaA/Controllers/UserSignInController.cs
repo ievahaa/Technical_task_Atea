@@ -31,7 +31,7 @@ namespace TechnicalTaskQaA.Controllers
                     return BadRequest("incorrect nickname");
                 }
 
-                if (!BCrypt.Net.BCrypt.Verify(model.PasswordeHash, user.PasswordeHash))
+                if (!BCrypt.Net.BCrypt.Verify(model.PasswordHash, user.PasswordHash))
                 {
                     return BadRequest("invalid password");
                 }

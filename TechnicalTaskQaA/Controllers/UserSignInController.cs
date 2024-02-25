@@ -28,12 +28,12 @@ namespace TechnicalTaskQaA.Controllers
 
                 if (user == null)
                 {
-                    return BadRequest("incorrect nickname");
+                    return BadRequest(new { message = "Incorrect nickname" });
                 }
 
                 if (!BCrypt.Net.BCrypt.Verify(model.PasswordHash, user.PasswordHash))
                 {
-                    return BadRequest("invalid password");
+                    return BadRequest(new { message = "Incorrect password" });
                 }
 
                 var jwt = _jwtService.Generate(user.Id);

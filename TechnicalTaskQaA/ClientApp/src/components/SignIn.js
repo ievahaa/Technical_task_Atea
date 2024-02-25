@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './SignInUp.css';
 
-export const SignIn = ({ setIsUser }) => {
+export const SignIn = ({ isUser, setIsUser }) => {
 
     const [nickname, setNickname] = useState('');
     const [passwordHash, setPasswordHash] = useState('');
@@ -35,6 +35,10 @@ export const SignIn = ({ setIsUser }) => {
             console.error("Sign In error1: ", error.message);
         }
     };
+
+    if (isUser) {
+        history.push('/');
+    }
 
     return (
         <div className="sign-div">

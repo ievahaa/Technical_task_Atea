@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './SignInUp.css';
 
-export const SignUp = () => {
+export const SignUp = ({isUser }) => {
 
     const [name, setName] = useState('');
     const [nickname, setNickname] = useState('');
@@ -15,6 +15,7 @@ export const SignUp = () => {
     const history = useHistory();
 
     const fetchNicknames = async () => {
+
         const response = await fetch("http://localhost:5000/api/get-user-list");
         if (!response.ok) {
             console.log("error");
@@ -72,6 +73,10 @@ export const SignUp = () => {
             alert("Passwords doesn't match");
         }
     };
+
+    if (isUser) {
+        history.push('/');
+    }
 
     return (
         <div className="sign-div">

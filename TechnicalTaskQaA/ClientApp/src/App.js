@@ -12,6 +12,7 @@ import './custom.css'
 export const App = () => {
 
     const [isUser, setIsUser] = useState(false);
+    const [user, setUser] = useState();
 
     const fetchUser = async () => {
         const response = await fetch("http://localhost:5000/api/profile", {
@@ -22,11 +23,12 @@ export const App = () => {
         const content = await response.json();
         if (parseInt(content.id) > 0) {
             setIsUser(true);
+            setUser(content);
         }
     }
 
-    useEffect(() => {
-        fetchUser();
+    useEffect(async() => {
+        await fetchUser();
         //(
         //    async () => {
         //        const response = await fetch("http://localhost:5000/api/profile", {
@@ -46,10 +48,10 @@ export const App = () => {
         <BrowserRouter>
             <NavMenu isUser={isUser} setIsUser={setIsUser} />
             <Route exact path='/' component={() => <Home isUser={isUser} />} />
-            <Route path='/sign-in' component={() => <SignIn setIsUser={setIsUser} />} />
-            <Route path='/sign-up' component={SignUp} />
-            <Route path='/questions' component={Questions} />
-            <Route path='/profile' component={Profile} />
+            <Route path='/sign-in' component={() => <SignIn isUser={isUser} setIsUser={setIsUser} />} />
+            <Route path='/sign-up' component={() => <SignUp isUser={isUser} />} />
+            <Route path='/questions' component={() => <Questions isUser={isUser } />} />
+            <Route path='/profile' component={() => <Profile isUser={isUser} user={user} />} />
         </BrowserRouter>
     );
 }

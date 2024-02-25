@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +22,7 @@ namespace TechnicalTaskQaA.Controllers
         [HttpGet("get-all-questions")]
         public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
         {
-            if(_dbcontext.Questions == null)
+            if (_dbcontext.Questions == null)
             {
                 return NotFound("no db");
             }

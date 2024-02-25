@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
 
@@ -19,11 +18,11 @@ namespace TechnicalTaskQaA.Controllers
         [HttpPut("update-profile")]
         public IActionResult UpdateProfile(UserUpdate model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = _userRepository.GetByNickName(model.OldNickname);
 
-                if(user == null)
+                if (user == null)
                 {
                     return NotFound("User Not Found");
                 }

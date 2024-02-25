@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
 
@@ -21,7 +20,7 @@ namespace TechnicalTaskQaA.Controllers
         [HttpPost("create-question")]
         public IActionResult CreteQuestion(Question model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var question = new Question
                 {

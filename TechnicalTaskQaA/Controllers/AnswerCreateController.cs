@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
@@ -22,7 +21,7 @@ namespace TechnicalTaskQaA.Controllers
         [HttpPost("create-answer")]
         public IActionResult CreateAnswer(Answer model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var question = _questionRepository.GetById(model.QuestionId);
 

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
 
@@ -19,7 +18,7 @@ namespace TechnicalTaskQaA.Controllers
         [HttpDelete("delete-answer")]
         public IActionResult DeleteAnswer(Answer model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var answer = _answerRepository.GetById(model.Id);
                 if (answer == null)

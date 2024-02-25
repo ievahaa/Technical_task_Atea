@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
 
@@ -19,10 +18,10 @@ namespace TechnicalTaskQaA.Controllers
         [HttpDelete("delete-profile")]
         public IActionResult DeleteProfile(User model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = _userRepository.GetById(model.Id);
-                if(user != null)
+                if (user != null)
                 {
                     _userRepository.Delete(user);
                     Response.Cookies.Delete("jwt");

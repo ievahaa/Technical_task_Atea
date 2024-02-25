@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
@@ -20,7 +19,7 @@ namespace TechnicalTaskQaA.Controllers
         [HttpPut("update-answer")]
         public IActionResult UpdateAnswer(Answer model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var answer = _answerRepository.GetById(model.Id);
                 if (answer == null)

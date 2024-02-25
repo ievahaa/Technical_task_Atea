@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TechnicalTaskQaA.Data;
 using TechnicalTaskQaA.Models;
 
@@ -19,7 +18,7 @@ namespace TechnicalTaskQaA.Controllers
         [HttpPut("update-question")]
         public IActionResult UpdateQuestion(Question model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var question = _questionRepository.GetById(model.Id);
 

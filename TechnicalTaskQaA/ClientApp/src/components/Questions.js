@@ -187,12 +187,12 @@ export const Questions = ({ isUser }) => {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        id: parseInt(questionId)
+                        id: parseInt(question.id)
                     }),
                 });
 
                 if (response.ok) {
-                    console.log("article deleted")
+                    console.log("question deleted")
                 } else {
                     const errorData = await response.json();
                     console.log("Error: ", errorData);

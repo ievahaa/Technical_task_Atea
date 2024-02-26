@@ -1,7 +1,8 @@
 ﻿import React from 'react';
+import { useEffect } from 'react';
 import './Home.css';
 
-export const Home = ({isUser }) => {
+export const Home = ({ isUser}) => {
 
     return (
       <div className="home-div">

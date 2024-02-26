@@ -32,7 +32,7 @@ namespace TechnicalTaskQaA.Controllers
 
                 _answerRepository.Update(answer);
 
-                return Ok("answer updated");
+                return Ok(new { message = "answer updated" });
             }
             else
             {

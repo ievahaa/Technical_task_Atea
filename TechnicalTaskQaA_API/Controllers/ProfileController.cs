@@ -27,6 +27,10 @@ namespace TechnicalTaskQaA_API.Controllers
             try
             {
                 var jwt = Request.Cookies["jwt"];
+                if (jwt == null)
+                {
+                    return Unauthorized(new { message = "JWT cookie is missing" });
+                }
                 var token = _jwtService.Verify(jwt);
                 int userId = int.Parse(token.Issuer);
                 var user = _context.Users.FirstOrDefault(u => u.Id == userId);
@@ -105,6 +109,10 @@ namespace TechnicalTaskQaA_API.Controllers
         public async Task<ActionResult<User>> DeleteProfile()
         {
             var jwt = Request.Cookies["jwt"];
+            if (jwt == null)
+            {
+                return Unauthorized(new { message = "JWT cookie is missing" });
+            }
             var token = _jwtService.Verify(jwt);
             int userId = int.Parse(token.Issuer);
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);

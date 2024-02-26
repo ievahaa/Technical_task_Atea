@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
-using System.Text.Json;
 using TechnicalTaskQaA_API.Data;
 using TechnicalTaskQaA_API.ModelsAPI;
 using TechnicalTaskQaA_API.Services;
@@ -23,7 +20,7 @@ namespace TechnicalTaskQaA_API.Controllers
             _dbContext = dbContext;
             _jwtService = jwtService;
         }
-        
+
 
         [HttpGet("{questionId}")]
         [Authorize]
@@ -53,7 +50,7 @@ namespace TechnicalTaskQaA_API.Controllers
 
             string[] answerList = new string[matchingAnswers.Count];
 
-            for (int i = 0; i<matchingAnswers.Count; i++)
+            for (int i = 0; i < matchingAnswers.Count; i++)
             {
                 answerList[i] = matchingAnswers[i].AnswerText;
             }

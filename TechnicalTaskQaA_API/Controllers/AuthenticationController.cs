@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TechnicalTaskQaA_API.Data;
 using TechnicalTaskQaA_API.ModelsAPI;
@@ -27,10 +26,10 @@ namespace TechnicalTaskQaA_API.Controllers
             user.Name = model.Name;
             user.Nickname = model.Nickname;
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.PasswordHash);
-            
+
             _context.Users.Add(user);
             _context.SaveChanges();
-            
+
             return Ok(user);
         }
 
@@ -65,7 +64,5 @@ namespace TechnicalTaskQaA_API.Controllers
             Response.Cookies.Delete("jwt");
             return Ok(new { message = "SignOut successful" });
         }
-
-        
     }
 }

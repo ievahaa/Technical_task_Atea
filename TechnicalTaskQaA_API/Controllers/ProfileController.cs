@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TechnicalTaskQaA_API.Data;
@@ -74,7 +73,7 @@ namespace TechnicalTaskQaA_API.Controllers
             if (ModelState.IsValid)
             {
                 var user = _context.Users.FirstOrDefault(u => u.Nickname == model.Nickname);
-                if (user != null && model.Password !=null && model.Password.Equals(model.ConfirmPassword))
+                if (user != null && model.Password != null && model.Password.Equals(model.ConfirmPassword))
                 {
                     user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password);
 

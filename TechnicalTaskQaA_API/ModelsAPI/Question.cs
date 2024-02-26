@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TechnicalTaskQaA_API.ModelsAPI
+﻿namespace TechnicalTaskQaA_API.ModelsAPI
 {
     public partial class Question
     {

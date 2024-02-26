@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TechnicalTaskQaA_API.Data;
@@ -86,7 +85,7 @@ namespace TechnicalTaskQaA_API.Controllers
             {
                 return NotFound("question not found");
             }
-            else if(question.UserId != userId)
+            else if (question.UserId != userId)
             {
                 return BadRequest(new { message = "no access" });
             }
@@ -120,7 +119,7 @@ namespace TechnicalTaskQaA_API.Controllers
             {
                 return NotFound();
             }
-            else if(question.UserId != userId)
+            else if (question.UserId != userId)
             {
                 return BadRequest(new { message = "no access" });
             }

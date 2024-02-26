@@ -28,7 +28,7 @@ namespace TechnicalTaskQaA.Controllers
 
                 _answerRepository.Delete(answer);
 
-                return Ok("answer deleted");
+                return Ok(new { message = "answer deleted" });
             }
             else
             {

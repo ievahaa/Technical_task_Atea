@@ -1,0 +1,50 @@
+﻿.questions-div{
+    margin:0 5vw 0 5vw;
+}
+
+.top-div{
+    display:flex;
+    justify-content:space-between;
+    margin: 20px 0;
+}
+
+.answer-func-btn {
+    float: right;
+}
+
+.search-input{
+    height:38px;
+    width:20vw;
+}
+
+.search-div{
+    display:flex;
+    align-content:baseline;
+}
+
+.show-all-div {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.crad-div{
+    margin: 10px 0;
+}
+
+.question-p{
+    display: flex;
+    justify-content:space-between;
+}
+
+.question-btn-div{
+    display:flex;
+    flex-direction:column;
+}
+
+.answer-btn {
+    margin: 5px 0 5px 0;
+}
+
+.blockquote-footer{
+    height:40px;
+}

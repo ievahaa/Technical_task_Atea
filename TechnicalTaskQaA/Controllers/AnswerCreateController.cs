@@ -40,7 +40,7 @@ namespace TechnicalTaskQaA.Controllers
 
                 _answerRepository.Create(answer);
 
-                return Ok(answer);
+                return Ok(new { message = "answer created" });
             }
             else
             {

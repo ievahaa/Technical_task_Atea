@@ -32,7 +32,7 @@ namespace TechnicalTaskQaA.Controllers
                 };
 
                 _questionRepository.Create(question);
-                return Ok("question created");
+                return Ok(new { message = "question crerated" });
             }
             else
             {

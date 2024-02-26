@@ -34,7 +34,7 @@ namespace TechnicalTaskQaA.Controllers
 
                 _questionRepository.Update(question);
 
-                return Ok("question updated");
+                return Ok(new { message = "question updated" });
             }
             else
             {

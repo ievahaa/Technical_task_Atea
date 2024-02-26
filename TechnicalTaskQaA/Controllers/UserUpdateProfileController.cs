@@ -28,7 +28,7 @@ namespace TechnicalTaskQaA.Controllers
                 }
 
                 user.Name = model.Name;
-                user.Nickname = model.OldNickname;
+                user.Nickname = model.Nickname;
 
                 _userRepository.Update(user);
 

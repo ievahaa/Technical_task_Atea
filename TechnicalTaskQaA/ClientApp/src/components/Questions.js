@@ -303,6 +303,10 @@ export const Questions = ({ isUser }) => {
     }
 
     const handleSearch = () => {
+        if (searchQuery === '') {
+            setShowAllQuestions(true);
+            return;
+        }
         setSearchedQuestions(allQuestions.filter(question =>
             question.keyWord1.toLowerCase().includes(searchQuery.toLowerCase())))
         setSearchedQuestions((prevQ) => [...prevQ, ...allQuestions.filter(question =>

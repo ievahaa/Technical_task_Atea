@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using TechnicalTaskQaA_API.Controllers;
 using TechnicalTaskQaA_API.Data;
 using TechnicalTaskQaA_API.ModelsAPI;
